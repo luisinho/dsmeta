@@ -12,16 +12,13 @@ public class EmailService {
 	@Autowired
 	private SaleRepository saleRepository;
 
-	public String sendEmail(Long saleId) {
+	public void sendEmail(Long saleId) {
 
 		Sale sale = this.saleRepository.findById(saleId).get();
-		
+
 		String date = sale.getDate().getMonthValue() + "/" + sale.getDate().getYear();
 
 		String msg = "Vendedor " + sale.getSellerName() + "foi destaque em " + date
 				+ " com um total de R$ " + String.format("%.2f", sale.getAmount());
-		
-		return msg;		
-		
 	}
 }

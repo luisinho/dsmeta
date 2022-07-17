@@ -36,7 +36,7 @@ public class SaleController {
 
 	@GetMapping("/{id}/notification")
 	public ResponseEntity<String> notifyEmail(@PathVariable Long id) {
-		String msg = this.emailService.sendEmail(id);
-		return ResponseEntity.ok(msg);
+		this.emailService.sendEmail(id);
+		return ResponseEntity.ok().body("");
 	}
 }
