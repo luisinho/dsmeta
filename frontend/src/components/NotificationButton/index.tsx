@@ -6,7 +6,7 @@ function NotificationButton() {
         <div className="dsmeta-red-bnt">
             <img src={icon} alt="Notificar" />
         </div>
-    )
+    );
 }
 
 export default NotificationButton;
